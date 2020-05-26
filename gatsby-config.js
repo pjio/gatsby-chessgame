@@ -33,7 +33,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "xubaso-s3",
+        bucketName: "chessgame.xubaso.com",
       },
     },
   ],
