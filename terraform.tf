@@ -110,7 +110,7 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
 
   viewer_certificate {
     # Hardcoded arn of the manually added letsencrypt certificate
-    acm_certificate_arn = "arn:aws:acm:us-east-1:984630510682:certificate/a48ecc45-ce34-4d9b-bc85-7f6428881331"
+    acm_certificate_arn = "arn:aws:acm:us-east-1:984630510682:certificate/2ba3f328-9745-43e2-9423-dc233bd469c9"
     ssl_support_method = "sni-only"
     minimum_protocol_version = "TLSv1.2_2018"
   }
@@ -143,9 +143,9 @@ resource "aws_route53_record" "r53_zone" {
 }
 
 resource "aws_route53_record" "letsencrypt" {
-  name    = ""
+  name    = "_acme-challenge.xubaso.com"
   type    = "TXT"
   zone_id = aws_route53_zone.r53_zone.zone_id
   ttl     = 300
-  records = ["abcdefghijklmnopqrstuvwxyz"]
+  records = ["hy2U3mcfjC5tMwnQjlZy6wM8Mh5e1NE1CHjUZERQyik"]
 }
